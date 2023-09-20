@@ -10,9 +10,14 @@ import com.runitrut.dailytodoapp.databinding.ItemTodoBinding
 
 // This TodoAdapter class hold the logic to create and bind functionality to each individual Recycler item
 class TodoAdapter(
-    //pass in parameter that extended mutableList from the data classTodo
+    // Pass in parameter that extended mutableList from the data classTodo
     private val todos:MutableList<Todo>
 ) : RecyclerView.Adapter<TodoAdapter.TodoViewHolder>(){
+    // The ViewHolder will hold the specific details and blueprint for each RecyclerView view, via..
+    // creating the ViewHolder
+    // The parameter of the VH is a reference to the actual view.
+    // It extends RV.VH() and its argument is the parameter of the VH class, which is again the reference to the actual view.
+    // Lastly; extended the TodoAdapter class with RV.Adapter<TodoAdapter>.TodoVH>()
     inner class TodoViewHolder(val binding: ItemTodoBinding) : RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TodoViewHolder {
